@@ -24,95 +24,8 @@ tab.newButton("---Hitboxes---", "Hitboxes Section", function()
     print('Hitboxes Section')
 end)
 
-tab.newButton("(5)", "Hitbox", function()
-local HeadSize = 5
-local IsDisabled = true
-local IsTeamCheckEnabled = false
-
-game:GetService('RunService').RenderStepped:Connect(function()
-if IsDisabled then
-local localPlayer = game:GetService('Players').LocalPlayer
-if not localPlayer then return end
-
-local localPlayerTeam = localPlayer.Team
-
-for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
-if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
-local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-if humanoidRootPart then
-humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
-humanoidRootPart.Transparency = 1
-humanoidRootPart.BrickColor = BrickColor.new("Really blue")
-humanoidRootPart.Material = Enum.Material.Neon
-humanoidRootPart.CanCollide = false
-end
-end
-end
-end
-end)
-
-end)
-
-tab.newButton("(8)", "Hitbox", function()
-local HeadSize = 8
-local IsDisabled = true
-local IsTeamCheckEnabled = false
-
-game:GetService('RunService').RenderStepped:Connect(function()
-if IsDisabled then
-local localPlayer = game:GetService('Players').LocalPlayer
-if not localPlayer then return end
-
-local localPlayerTeam = localPlayer.Team
-
-for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
-if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
-local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-if humanoidRootPart then
-humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
-humanoidRootPart.Transparency = 1
-humanoidRootPart.BrickColor = BrickColor.new("Really blue")
-humanoidRootPart.Material = Enum.Material.Neon
-humanoidRootPart.CanCollide = false
-end
-end
-end
-end
-end)
-
-end)
-
-tab.newButton("(10)", "Hitbox", function()
-local HeadSize = 10
-local IsDisabled = true
-local IsTeamCheckEnabled = false
-
-game:GetService('RunService').RenderStepped:Connect(function()
-if IsDisabled then
-local localPlayer = game:GetService('Players').LocalPlayer
-if not localPlayer then return end
-
-local localPlayerTeam = localPlayer.Team
-
-for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
-if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
-local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-if humanoidRootPart then
-humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
-humanoidRootPart.Transparency = 1
-humanoidRootPart.BrickColor = BrickColor.new("Really blue")
-humanoidRootPart.Material = Enum.Material.Neon
-humanoidRootPart.CanCollide = false
-end
-end
-end
-end
-end)
-
-end)
-
-tab.newButton("(15)", "Hitbox", function()
-local HeadSize = 15
+tab.newSlider("Hitbox", "Slider", 50, false, function(num)
+local HeadSize = (num)
 local IsDisabled = true
 local IsTeamCheckEnabled = false
 
@@ -154,9 +67,3 @@ game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function
 end)
 
 end)
-
-
-
-
-
-
