@@ -24,7 +24,7 @@ tab.newButton("---Hitboxes---", "Hitboxes Section", function()
     print('Hitboxes Section')
 end)
 
-tab.newSlider("Hitbox", "Slider", 50, false, function(num)
+tab.newSlider("Hitbox", "Slider", 50, true, function(num)
 local HeadSize = (num)
 local IsDisabled = true
 local IsTeamCheckEnabled = false
